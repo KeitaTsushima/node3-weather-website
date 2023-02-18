@@ -11,8 +11,8 @@ const forecast = (lon, lat, callback) => {
 		} else {
 			const obj = body.current
 			const weather_desc = obj.weather_descriptions[0];
-			const {temperature: temperature_outside, feelslike: temperature_feelslike} = obj
-			const data = `${weather_desc}. It's currently ${temperature_outside} degrees outside. It feels like ${temperature_feelslike} outside.`;
+			const {temperature: temperature_outside, feelslike: temperature_feelslike, humidity} = obj
+			const data = `${weather_desc}. It's currently ${temperature_outside} degrees outside. It feels like ${temperature_feelslike} outside. The humidity is ${humidity}%.`;
 			callback(undefined, data);
 		}
 	});
